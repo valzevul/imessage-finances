@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JE9-Jd-lVo">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Messages View Controller-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
                         <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
@@ -17,23 +18,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1e-fi-ked">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAY-DF-VIf">
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <segue destination="MYB-0G-pav" kind="push" id="05G-zV-p7V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="d1e-fi-ked" secondAttribute="centerY" id="H0s-hz-dDP"/>
-                            <constraint firstAttribute="centerX" secondItem="d1e-fi-ked" secondAttribute="centerX" id="wFy-hW-Bib"/>
+                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="EAY-DF-VIf" secondAttribute="bottom" constant="8" symbolic="YES" id="0j7-Vo-QLe"/>
+                            <constraint firstItem="EAY-DF-VIf" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="dV9-eM-cau"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="L9S-Xu-Qcd"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076.8" y="138.53073463268368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3Js-VE-0Vj">
+            <objects>
+                <viewController id="MYB-0G-pav" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SI4-Wr-a2i"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xqs-pe-TWu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f75-Bl-vuc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Сумма" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fi4-6v-7lz">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Наименование платежа" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EiC-Bp-E68">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlY-rm-DBe">
+                                <state key="normal" title="Отправить"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rlY-rm-DBe" secondAttribute="trailing" constant="8" id="0Fn-yE-roE"/>
+                            <constraint firstItem="Fi4-6v-7lz" firstAttribute="leading" secondItem="f75-Bl-vuc" secondAttribute="leading" constant="16" id="QB9-te-WlC"/>
+                            <constraint firstAttribute="trailing" secondItem="EiC-Bp-E68" secondAttribute="trailing" constant="16" id="RSr-pv-N2o"/>
+                            <constraint firstItem="EiC-Bp-E68" firstAttribute="leading" secondItem="f75-Bl-vuc" secondAttribute="leading" constant="16" id="Sqj-4R-WlB"/>
+                            <constraint firstItem="rlY-rm-DBe" firstAttribute="leading" secondItem="f75-Bl-vuc" secondAttribute="leading" constant="8" id="XkM-f3-GYB"/>
+                            <constraint firstItem="Fi4-6v-7lz" firstAttribute="top" secondItem="EiC-Bp-E68" secondAttribute="bottom" constant="8" id="dTz-OR-f6q"/>
+                            <constraint firstItem="rlY-rm-DBe" firstAttribute="top" secondItem="Fi4-6v-7lz" secondAttribute="bottom" constant="8" id="gFr-A1-mo5"/>
+                            <constraint firstAttribute="trailing" secondItem="Fi4-6v-7lz" secondAttribute="trailing" constant="16" id="nPr-7b-sYV"/>
+                            <constraint firstItem="EiC-Bp-E68" firstAttribute="top" secondItem="SI4-Wr-a2i" secondAttribute="bottom" constant="8" id="wgR-4i-cyu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iME-sI-ofX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3xB-rm-JsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1789" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u2T-Rh-X1r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JE9-Jd-lVo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y5C-ke-6vu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ObA-dk-sSI" kind="relationship" relationship="rootViewController" id="qXH-zg-7Jp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a7w-eL-ncY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="139"/>
         </scene>
     </scenes>
 </document>
